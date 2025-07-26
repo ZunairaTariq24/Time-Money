@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>If Time Were Money</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <h1>Last 3 Hours: Time = Money</h1>
+
+    <div class="info-box">
+      <h2>💡 Activity Value Chart</h2>
+      <ul>
+        <li>📚 Study → $25/hr | +10 pts/hr</li>
+        <li>📱 Scrolling → -$5/hr | -2 pts/hr</li>
+        <li>😴 Sleeping → $10/hr | +5 pts/hr</li>
+        <li>🎨 Creating → $20/hr | +8 pts/hr</li>
+        <li>👥 Socializing → $12/hr | +6 pts/hr</li>
+      </ul>
+    </div>
+
+    <div class="time-log">
+      <h2>Where Did You Spend Your Last 3 Hours?</h2>
+      <form id="activityForm">
+        <label>📚 Study (hrs:min): <input type="text" name="Study" placeholder="e.g. 1:30" /></label><br />
+        <label>📱 Scrolling (hrs:min): <input type="text" name="Scroll" placeholder="e.g. 0:45" /></label><br />
+        <label>😴 Sleeping (hrs:min): <input type="text" name="Sleep" placeholder="e.g. 0:30" /></label><br />
+        <label>🎨 Creating (hrs:min): <input type="text" name="Create" placeholder="e.g. 1:00" /></label><br />
+        <label>👥 Socializing (hrs:min): <input type="text" name="Socialize" placeholder="e.g. 0:15" /></label><br />
+        <button type="submit">💸 Calculate</button>
+        <p id="errorMsg" class="error"></p>
+      </form>
+    </div>
+
+    <div id="summarySection" class="results" style="margin-top: 20px;">
+      <p>💰 Earned Value: <span id="moneyResult">$0</span></p>
+      <p>🏆 Score: <span id="score">0 pts</span></p>
+      <p>🧠 Insight: <span id="insight"></span></p>
+    </div>
+
+    <button id="downloadBtn" style="display:none;">📄 Download Summary as PDF</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
